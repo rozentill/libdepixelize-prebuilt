@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdepixelize.a  CMakeFiles/depixelize.dir/kopftracer2011.cpp.o
+/usr/bin/ranlib libdepixelize.a
