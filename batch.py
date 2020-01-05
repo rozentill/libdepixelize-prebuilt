@@ -47,7 +47,7 @@ def main():
 
 			#call color trace
 			trace_exe = "build/src/depixelize-kopf2011/depixelize-kopf2011"
-			command_args = [trace_exe, "\"%s\""%tmp_file, "-o", "\"%s\""%join(dst_dir, subdir, subfile[:-4]+".svg"), "-c", "1", "-i", "5", "-m", "1", "-r", "4", "-n"]
+			command_args = [trace_exe, "\"%s\""%tmp_file, "-o", "\"%s\""%join(dst_dir, subdir, subfile[:-4]+".svg"), "-c", "1", "-i", "5", "-m", "1", "-r", "4"]
 			command_str = " ".join(command_args)
 			os.system(command_str)
 
