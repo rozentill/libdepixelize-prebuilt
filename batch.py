@@ -42,8 +42,17 @@ def main():
 				im_rgb[:, :, 2] = im_rgba[:,:, 2] * im_rgba[:,:, 3] + (1-im_rgba[:,:, 3]) * 1
 			elif im_rgba.shape[2] == 3:
 				im_rgb=im_rgba
+
+			#padding
+			h = im_rgb.shape[0]
+			w = im_rgb.shape[1]
+			c = im_rgb.shape[2]
+			im_rgb_pad = np.ones((h+4, w+4, c))
+			im_rgb_pad[2:h+2, 2:w+2, :] = im_rgb
+
+			#output temp image
 			tmp_file = "tmp.png"
-			cv2.imwrite(tmp_file, im_rgb*255)
+			cv2.imwrite(tmp_file, im_rgb_pad*255)
 
 			#call color trace
 			trace_exe = "build/src/depixelize-kopf2011/depixelize-kopf2011"
